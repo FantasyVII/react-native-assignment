@@ -13,7 +13,6 @@ const apiCall = async () => {
 function* getAPIData(action) {
     try {
         const data = yield call(apiCall);
-        console.log(data)
         yield put(receiveAPIData(JSON.stringify(data)))
     } catch (e) {
         console.log(e)
