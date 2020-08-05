@@ -7,10 +7,8 @@ const { width, height } = Dimensions.get('window')
 export default function KeyboardAvoidingScrollView(props) {
     if (Platform.OS === 'ios') {
         return (
-            <KeyboardAvoidingView style={props.style} behavior={'padding'}>
-                <ScrollView style={props.style} contentContainerStyle={{ ...props.contentContainerStyle, height: height }} bounces={false}>
-                    {props.children}
-                </ScrollView >
+            <KeyboardAvoidingView style={{ ...props.style, flex: 1 }} behavior={'padding'}>
+                {props.children}
             </KeyboardAvoidingView>
         )
     } else if (Platform.OS === 'android') {
